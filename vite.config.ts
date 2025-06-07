@@ -1,7 +1,4 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import type { ConfigEnv, UserConfigExport } from 'vite';
+import baseConfig from './vite-config/vite.common.ts';
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default (env: ConfigEnv): UserConfigExport => baseConfig(env);
