@@ -8,6 +8,7 @@ import {
   type ServerOptions,
 } from 'vite';
 import { COMMONS } from './constants';
+import tailwindcss from '@tailwindcss/vite';
 
 export default ({ mode }: ConfigEnv) => {
   /* TODO: Make this configurable - dependent on environment */
@@ -36,7 +37,7 @@ export default ({ mode }: ConfigEnv) => {
   return defineConfig({
     base: './',
     envPrefix: COMMONS.ENV_PREFIX,
-    plugins: [react({})],
+    plugins: [react(), tailwindcss()],
     assetsInclude: [
       '**/*.png',
       '**/*.jpg',
